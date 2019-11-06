@@ -1,13 +1,10 @@
 package com.fred.spi;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.ServiceLoader;
 
 public class ServiceLoaderTest {
 
-    @Test
-    public void testLoad() {
+    public static void testLoad() {
         ServiceLoader<LogService> serviceLoader = ServiceLoader.load(LogService.class);
 //        serviceLoader.iterator();
 //
@@ -17,5 +14,9 @@ public class ServiceLoaderTest {
         for (LogService logService : serviceLoader) {
             logService.log();
         }
+    }
+
+    public static void main(String[] args) {
+        testLoad();
     }
 }
